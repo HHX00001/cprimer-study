@@ -14,11 +14,15 @@ void testUnion();
 
 void testEnum();
 
+void testTypedef();
+
 int main() {
     brWithStr("testUnion");
-    testUnion();
+//    testUnion();
     brWithStr("testEnum");
-    testEnum();
+//    testEnum();
+    brWithStr("testTypedef");
+    testTypedef();
     return 0;
 }
 
@@ -51,31 +55,23 @@ void testEnum() {
         red, yellow, blue, green
     };
 
-    enum spectrum color;
-    printf("enter a number\n");
-    scanf("%d", &color);
-    switch (color) {
-        case red: {
-            printf("red\n");
-            break;
-        }
-        case yellow: {
-            printf("yellow\n");
-            break;
-        }
-        case blue: {
-            printf("blue\n");
-            break;
-        }
-        case green: {
-            printf("green\n");
-            break;
-        }
-        default: {
-            printf("error");
-            break;
-        }
-    }
+    enum spectrum color = red;
+
+    enum levels {
+        low = 10, medium = 100, high = 2000
+    };
 }
+
+void testTypedef() {
+    typedef unsigned char BYTE;
+    BYTE a, *aptr, aaa[10];
+    *aptr = 10;
+
+    typedef char *STRING;
+    STRING str = "aaaaa";
+    printf("%s\n", str);
+}
+
+
 
 
