@@ -48,7 +48,7 @@ struct flex {
 
 struct full_name makeNameInfo();
 
-char *s_gets(char *str, int n);
+extern char *s_gets(char *str, int n);
 
 void testCreateStruct();
 
@@ -94,12 +94,12 @@ int main() {
     brWithStr("testRetStruct");
 //    testRetStruct();
     brWithStr("testSaveStructStrPtr");
-//    testSaveStructStrPtr();
+    testSaveStructStrPtr();
     //字面量
     brWithStr("literal");
 //    showNameInfo((struct full_name) {"h", "hx", 3});
     brWithStr("testFlex");
-    testFlex();
+//    testFlex();
     return 0;
 }
 
@@ -116,22 +116,6 @@ void testCreateStruct() {
     printf("book title: %s\n", library.title);
     printf("book author: %s\n", library.author);
     printf("book value: %.2f\n", library.value);
-}
-
-char *s_gets(char *str, int n) {
-    char *res;
-    char *find;
-
-    res = fgets(str, n, stdin);
-    if (res) {
-        find = strchr(str, '\n');
-        if (find) {
-            *find = '\0';
-        } else {
-            while (getchar() != '\n');
-        }
-    }
-    return res;
 }
 
 void testInitialStruct() {
@@ -284,7 +268,7 @@ void testSaveStructStrPtr() {
 
     struct strStruct strStruct;
 
-    //这里指针指向不知道什么内存
+    //strStruct中有两个野指针
     printf("str1: *s,str2: %s\n", strStruct.str1, strStruct.str2);
 }
 
