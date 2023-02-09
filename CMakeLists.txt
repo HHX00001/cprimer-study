@@ -45,3 +45,5 @@ add_executable(test12_4 c-study-12/test12_4.c)
 
 add_executable(test14_1 c-study-14/test14_1.c)
 add_executable(test14_10 c-study-14/test14_10.c)
+
+add_executable(test15_1 c-study-15/test15_1.c)
