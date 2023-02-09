@@ -16,13 +16,21 @@ void testEnum();
 
 void testTypedef();
 
+void testComplexType();
+
+void testPtrFunc();
+
 int main() {
     brWithStr("testUnion");
 //    testUnion();
     brWithStr("testEnum");
 //    testEnum();
     brWithStr("testTypedef");
-    testTypedef();
+//    testTypedef();
+    brWithStr("testComplexType");
+//    testComplexType();
+    brWithStr("testPtrFunc");
+    testPtrFunc();
     return 0;
 }
 
@@ -70,8 +78,75 @@ void testTypedef() {
     typedef char *STRING;
     STRING str = "aaaaa";
     printf("%s\n", str);
+
 }
 
+void testComplexType() {
+    //数组指针
+    //1.首先计算(),ptr是指针
+    //2.该指针指向一个长度为10的数组
+    int (*ptr)[10];
+    //指针数组
+    //1.首先计算[10],说明ptr1是数组
+    //2.再计算*,ptr1的数组元素是指向int的指针
+    int *ptr1[10];
+    int i = 1;
+    *ptr[0] = i;
+    ptr1[0] = &i;
+    printf("success\n");
+}
 
+void toUpper(char *);
 
+void toLower(char *);
+
+void testPtrFunc() {
+    void (*f)(char *);
+
+    const int STRLEN = 20;
+    char str[STRLEN];
+
+    printf("enter a str:\n");
+    s_gets(str, STRLEN);
+    f = toLower;
+    //
+    f(str);
+    printf("the result of converting a str to lowercase is:\n%s\n", str);
+    br();
+
+    printf("enter a str:\n");
+    s_gets(str, STRLEN);
+    f = toUpper;
+    (*f)(str);
+    printf("the result of converting a str to uppercase is:\n%s\n", str);
+    printf("%s\n", str);
+}
+
+/**
+ * 字符串转大写(不可以修改字面量)
+ * @param str
+ */
+void toUpper(char *str) {
+    char *temp = str;
+    while (*temp != '\0') {
+        if (*temp > 96 && *temp < 123) {
+            *temp -= 32;
+        }
+        temp++;
+    }
+}
+
+/**
+ * 字符串转小写(不可以修改字面量)
+ * @param str
+ */
+void toLower(char *str) {
+    char *temp = str;
+    while (*temp != '\0') {
+        if (*temp > 64 && *temp < 91) {
+            *temp += 32;
+        }
+        temp++;
+    }
+}
 
