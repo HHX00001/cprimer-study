@@ -4,7 +4,7 @@ project(cprimer-study)
 set(CMAKE_CXX_STANDARD 17)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
-aux_source_directory(${PROJECT_SOURCE_DIR}/include LIB_SRC)
+aux_source_directory(${PROJECT_SOURCE_DIR}/include __include)
 
 add_executable(main main.cpp)
 
@@ -49,6 +49,6 @@ add_executable(test14_10 c-study-14/test14_10.c)
 
 add_executable(test15_1 c-study-15/test15_1.c)
 
-add_executable(test16_1 c-study-16/test16_1.c)
+add_executable(test16_1 c-study-16/test16_1.c ${__include})
 
-add_executable(test16_5 c-study-16/test16_5.c ${LIB_SRC})
+add_executable(test16_5 c-study-16/test16_5.c ${__include})

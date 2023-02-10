@@ -3,7 +3,9 @@
 //
 
 #include <cstdio>
-#include "myH.c"
+
+#define PI 3.1415
+#define ； ;
 
 int testMain();
 
@@ -12,8 +14,8 @@ void testDefine();
 void testMain1();
 
 int main() {
-//    testMain();
-//    testDefine();
+    testMain();
+    testDefine();
     testMain1();
     return 0;
 }
@@ -34,7 +36,7 @@ int testMain() {
 }
 
 void testDefine() {
-    //在myH头文件中把；定义为;
+    //#define ； ;
     //太强了,啥都能定义
-//    printf("%.20lf", PI)；
+//    printf("%.20lf\n", PI)；
 }

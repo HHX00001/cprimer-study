@@ -30,13 +30,13 @@ void testVariableMarco();
 
 int main() {
     brWithStr("testDefine");
-//    testDefine();
+    testDefine();
     brWithStr("testFuncDefine");
-//    testFuncDefine();
+    testFuncDefine();
     brWithStr("testStringifyMacro");
-//    testStringifyMacro();
+    testStringifyMacro();
     brWithStr("testGlue");
-//    testGlue();
+    testGlue();
     brWithStr("testVariableMarco");
     testVariableMarco();
 }
