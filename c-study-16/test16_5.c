@@ -1,8 +1,6 @@
 //
 // Created by stellar on 2023/2/9.
 //
-#include "common.h"
-
 #include "name_str.h"
 
 void testH();
