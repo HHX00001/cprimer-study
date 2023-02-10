@@ -16,9 +16,9 @@ struct full_name_struct {
 
 typedef struct full_name_struct full_name;
 
-void make_full_name(full_name *);
+extern void make_full_name(full_name *);
 
-void show_full_name(const full_name *);
+extern void show_full_name(const full_name *);
 
 #endif //#NAME_STR
 
