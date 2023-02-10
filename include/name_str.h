@@ -5,8 +5,6 @@
 #ifndef NAME_STR
 #define NAME_STR
 
-#include <string.h>
-
 #define SLEN 32
 
 struct full_name_struct {

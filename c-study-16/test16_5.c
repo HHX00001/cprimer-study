@@ -3,9 +3,14 @@
 //
 #include "name_str.h"
 
+#include "common.h"
+//如果没有#ifndef的话会出现重复定义声明
+#include "name_str.h"
+
 void testH();
 
 int main() {
+    brWithStr("testH");
     testH();
     return 0;
 }
