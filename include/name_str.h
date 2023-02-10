@@ -2,6 +2,9 @@
 // Created by stellar on 2023/2/9.
 //
 
+#ifndef NAME_STR
+#define NAME_STR
+
 #include <string.h>
 
 #define SLEN 32
@@ -16,3 +19,6 @@ typedef struct full_name_struct full_name;
 void make_full_name(full_name *);
 
 void show_full_name(const full_name *);
+
+#endif //#NAME_STR
+
